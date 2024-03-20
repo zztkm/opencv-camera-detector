@@ -25,7 +25,7 @@ jobs:
         with:
           python-version: "${{ matrix.python-version }}"
       - name: Install dependencies
-        run: sudo apt-get install -y llvm-dev libclang-dev clang
+        run: sudo apt-get install libv4l-dev
       - name: Build wheels
         uses: PyO3/maturin-action@v1
         with:
