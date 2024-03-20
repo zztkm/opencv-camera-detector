@@ -8,6 +8,7 @@ wheels/
 *.pyd
 # Rust
 target/
+*.so
 
 # venv
 .venv
