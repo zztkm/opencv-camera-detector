@@ -2,6 +2,12 @@
 
 OpenCV で利用できるカメラの情報を返すライブラリです。
 
+## Install
+
+```bash
+pip install opencvutil
+```
+
 ## 使い方
 
 ```python
