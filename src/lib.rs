@@ -26,7 +26,7 @@ fn camera_list() -> Py<PyAny> {
 }
 
 #[pymodule]
-fn _opencv_camera_detector(_py: Python, m: &PyModule) -> PyResult<()> {
+fn _opencvutil(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(camera_list, m)?)?;
     Ok(())
 }

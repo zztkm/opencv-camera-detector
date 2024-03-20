@@ -1,4 +1,4 @@
-from opencv_camera_detector import camera_list
+from opencvutil import camera_list
 
 
 def test_camera_list():

@@ -1,4 +1,4 @@
-# opencv-camera-detector
+# opencvutil
 
 OpenCV で利用できるカメラの情報を返すライブラリです。
 
@@ -6,10 +6,10 @@ OpenCV で利用できるカメラの情報を返すライブラリです。
 
 ```python
 import cv2
-import opencv_camera_detector
+import opencvutil
 
 # カメラの情報を取得
-infos = opencv_camera_detector.camera_list()
+infos = opencvutil.camera_list()
 
 # カメラの情報を表示し、ユーザーに選択させる
 for i, info in enumerate(infos):

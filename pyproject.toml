@@ -1,10 +1,6 @@
 [project]
-name = "opencv-camera-detector"
+name = "opencvutil"
 version = "0.0.1"
-description = "opencv utility"
-authors = [{ name = "zztkm", email = "zztkm@tsurutatakumi.info" }]
-dependencies = []
-readme = "README.md"
 license = { file = "LICENSE" }
 requires-python = ">= 3.8"
 
@@ -18,7 +14,7 @@ dev-dependencies = ["pytest>=8.1.1", "pip>=24.0"]
 
 [tool.maturin]
 python-source = "python"
-module-name = "opencv_camera_detector._opencv_camera_detector"
+module-name = "opencvutil._opencvutil"
 features = ["pyo3/extension-module"]
 
 [tool.ruff]
