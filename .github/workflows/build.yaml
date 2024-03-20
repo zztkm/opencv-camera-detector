@@ -13,35 +13,35 @@ permissions:
   contents: read
 
 jobs:
-  linux:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        target: [x86_64, aarch64]
-        python-version: ['3.8', '3.9', '3.10', '3.11', '3.12']
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "${{ matrix.python-version }}"
-      - name: Install dependencies
-        run: sudo apt-get install libv4l-dev llvm-dev libclang-dev clang
+  #linux:
+  #  runs-on: ubuntu-latest
+  #  strategy:
+  #    matrix:
+  #      target: [x86_64, aarch64]
+  #      python-version: ['3.8', '3.9', '3.10', '3.11', '3.12']
+  #  steps:
+  #    - uses: actions/checkout@v4
+  #    - uses: actions/setup-python@v5
+  #      with:
+  #        python-version: "${{ matrix.python-version }}"
+  #    - name: Install dependencies
+  #      run: sudo apt-get install libv4l-dev llvm-dev libclang-dev clang
 
-      - name: Build wheels
-        uses: PyO3/maturin-action@v1
-        env:
-          LIBCLANG_PATH: ${{ runner.temp }}/llvm-14/lib
-        with:
-          target: ${{ matrix.target }}
-          args: --release --out dist --find-interpreter
-          sccache: 'true'
-          manylinux: auto
-      - name: Upload wheels
-        uses: actions/upload-artifact@v4
-        with:
-          name: wheels-linux-${{ matrix.target }}-${{ matrix.python-version }}
-          path: dist
-          overwrite: true
+  #    - name: Build wheels
+  #      uses: PyO3/maturin-action@v1
+  #      env:
+  #        LIBCLANG_PATH: ${{ runner.temp }}/llvm-14/lib
+  #      with:
+  #        target: ${{ matrix.target }}
+  #        args: --release --out dist --find-interpreter
+  #        sccache: 'true'
+  #        manylinux: auto
+  #    - name: Upload wheels
+  #      uses: actions/upload-artifact@v4
+  #      with:
+  #        name: wheels-linux-${{ matrix.target }}-${{ matrix.python-version }}
+  #        path: dist
+  #        overwrite: true
 
   windows:
     runs-on: windows-latest
