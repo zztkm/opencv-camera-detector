@@ -2,6 +2,7 @@
 name = "opencv-camera-detector"
 version = "0.0.1"
 description = "opencv で利用するカメラ検出器"
+summary = "opencv で利用するカメラ検出器"
 authors = [{ name = "zztkm", email = "zztkm@tsurutatakumi.info" }]
 dependencies = []
 readme = "README.md"
