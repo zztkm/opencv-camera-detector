@@ -1,0 +1,18 @@
+[package]
+name = "opencv-camera-detector"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "opencv_camera_detector"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = "0.20.3"
+pythonize = "0.20.0"
+# nokhwa の新しいリリースが作られるまでは、git から直接取得する
+nokhwa = { git = "https://github.com/l1npengtul/nokhwa.git", branch = "0.10", features = [
+    "input-native",
+] }
+serde = { version = "1.0.197", features = ["derive"] }

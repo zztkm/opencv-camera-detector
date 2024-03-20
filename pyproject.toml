@@ -1,0 +1,58 @@
+[project]
+name = "opencv-camera-detector"
+version = "0.0.1"
+description = "opencv で利用するカメラ検出器"
+authors = [{ name = "zztkm", email = "zztkm@tsurutatakumi.info" }]
+dependencies = []
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["maturin>=1.2,<2.0"]
+build-backend = "maturin"
+
+[tool.rye]
+managed = true
+dev-dependencies = ["pytest>=8.1.1", "pip>=24.0"]
+
+[tool.maturin]
+python-source = "python"
+module-name = "opencv_camera_detector._opencv_camera_detector"
+features = ["pyo3/extension-module"]
+
+[tool.ruff]
+src = ["python", "tests"]
+exclude = [
+    ".venv",
+    "dist",
+    "config",
+    ".git",
+    ".eggs",
+    "__pypackages__",
+    ".tox",
+    ".mypy_cache",
+    ".pytest_cache",
+    ".hypothesis",
+    ".ruff_cache",
+]
+
+line-length = 100
+target-version = "py38"
+
+[tool.ruff.lint]
+# TODO: lint rule を追加する
+select = ["I", "E", "F", "W", "B", "UP"]
+
+[tool.ruff.format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space"
+
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false
+
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"
