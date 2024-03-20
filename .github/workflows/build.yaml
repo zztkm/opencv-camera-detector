@@ -25,9 +25,12 @@ jobs:
         with:
           python-version: "${{ matrix.python-version }}"
       - name: Install dependencies
-        run: sudo apt-get install libv4l-dev llvm llvm-dev libclang-dev clang
+        run: sudo apt-get install libv4l-dev llvm-dev libclang-dev clang
+
       - name: Build wheels
         uses: PyO3/maturin-action@v1
+        env:
+          LIBCLANG_PATH: ${{ runner.temp }}/llvm-14/lib
         with:
           target: ${{ matrix.target }}
           args: --release --out dist --find-interpreter
