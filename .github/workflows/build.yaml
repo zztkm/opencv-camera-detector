@@ -99,7 +99,7 @@ jobs:
     runs-on: ubuntu-latest
     # tag が push されたときだけ実行
     if: "startsWith(github.ref, 'refs/tags/')"
-    needs: [linux, windows, macos]
+    needs: [windows, macos]
     steps:
       - uses: actions/download-artifact@v4
         with:
